@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xsd:schema targetNamespace="urn:http://www.teoulmoon.com/mansoft/schemas" elementFormDefault="qualified"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:http://www.teoulmoon.com/mansoft/schemas"
+	xmlns:vs="http://schemas.microsoft.com/Visual-Studio-Intellisense" vs:friendlyname="MANSoft Web Forms Controls"
+	vs:ishtmlschema="false" vs:iscasesensitive="false" vs:requireattributequotes="false">
+	<xsd:annotation>
+		<xsd:documentation>
+			MANSoft Controls schema.
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:element name="ExpandingDiv" type="ExpandingDivDef" />
+	<xsd:complexType name="ExpandingDivDef" vs:noambientcontentmodel="true">
+		<xsd:choice>
+			<xsd:element name="ItemTemplate" type="TemplateDef" form="unqualified" vs:blockformatted="true" />
+		</xsd:choice>
+		<xsd:attribute name="ID" type="xsd:string" />
+		<xsd:attribute name="Runat">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="server" />
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="HeaderBackgroundColor" type="xsd:string" vs:builder="color" />
+		<xsd:attribute name="HeaderImage" type="xsd:anyURI" />
+		<xsd:attribute name="HeaderText" type="xsd:string" />
+		<xsd:attribute name="HeaderAlignment" type="HorizontalAlign" />
+		<xsd:attribute name="HeaderCssClass" type="xsd:string" />
+		<xsd:attribute name="CollapsedIcon" type="xsd:anyURI" />
+		<xsd:attribute name="ExpandedIcon" type="xsd:anyURI" />
+		<xsd:attribute name="Border" type="xsd:ui4" />
+		<xsd:attribute name="CellSpacing" type="xsd:ui4" />
+		<xsd:attribute name="CellPadding" type="xsd:ui4" />
+		<xsd:attribute name="Width" type="xsd:string" />
+		<xsd:attribute name="EnableViewState" type="xsd:boolean" />
+		<xsd:attributeGroup ref="Header" />
+	</xsd:complexType>
+	
+<xsd:simpleType name="boolean">
+  <xsd:restriction base="xsd:string">
+    <xsd:enumeration value="True" />
+    <xsd:enumeration value="False" />
+  </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="ui4">
+  <xsd:restriction base="xsd:nonNegativeInteger">
+    <xsd:minInclusive value="0" />
+    <xsd:maxInclusive value="4294967295" />
+  </xsd:restriction>
+</xsd:simpleType>
+
+<xsd:simpleType name="HorizontalAlign">
+  <xsd:restriction base="xsd:string">
+    <xsd:enumeration value="NotSet" />
+    <xsd:enumeration value="Left" />
+    <xsd:enumeration value="Center" />
+    <xsd:enumeration value="Right" />
+    <xsd:enumeration value="Justify" />
+  </xsd:restriction>
+</xsd:simpleType>
+	
+</xsd:schema>
